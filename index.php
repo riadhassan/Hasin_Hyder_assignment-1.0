@@ -5,7 +5,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 <div class="header">
 	<div class="container">
 		<div class="row">
@@ -36,10 +36,7 @@
                     <div class="col-md-4">
 								    <?php
 								    if(has_post_thumbnail()) {
-									    ?>
-                                        <img class="img-fluid" <?php the_post_thumbnail() ?>
-
-									    <?php
+                                        the_post_thumbnail("large", array("class" =>"img-fluid" ));
 								    }
 								    ?>
 
@@ -95,9 +92,7 @@
 					<p>
                         <?php
                         if(has_post_thumbnail()) {
-	                        ?>
-                            <?php the_post_thumbnail() ?>
-                            <?php
+	                        the_post_thumbnail("large", array("class" =>"img-fluid" ));
                         }
                         ?>
 					</p>
@@ -117,10 +112,7 @@
 		    }
 		    ?>
 
-
-                </div>
-
-
+        </div>
 
     <?php
     }
